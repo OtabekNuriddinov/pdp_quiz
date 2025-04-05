@@ -62,7 +62,7 @@ class _SignInState extends State<SignIn> with TickerProviderStateMixin {
       backgroundColor: AppColors.white,
       body: SingleChildScrollView(
         child: Padding(
-          padding: AppDimens.h40v70,
+          padding: EdgeInsets.symmetric(vertical: 70, horizontal: 40),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
