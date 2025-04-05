@@ -1,6 +1,6 @@
-# pdp_quiz
+# G12 Team
 
-A new Flutter project.
+A new Quiz Project.
 
 ## Getting Started
 
