@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pdp_quiz/screen/confirmation.dart';
-import 'package:pdp_quiz/screen/sign_in.dart';
-import 'package:pdp_quiz/screen/sign_up.dart';
-import 'package:pdp_quiz/screen/splash_screen.dart';
+import 'package:pdp_quiz/screen/confirmation/confirmation.dart';
+import 'package:pdp_quiz/screen/sign_in/sign_in.dart';
+import 'package:pdp_quiz/screen/sign_up/sign_up.dart';
+import 'package:pdp_quiz/screen/splash_screen/splash_screen.dart';
 
 sealed class AppRoutes{
   static final splash = 'splash';
