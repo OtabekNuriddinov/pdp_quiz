@@ -7,7 +7,7 @@ class PdpQuiz extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: AppRoutes.signIn,
+      initialRoute: AppRoutes.splash,
       routes: AppRoutes.routes,
     );
   }

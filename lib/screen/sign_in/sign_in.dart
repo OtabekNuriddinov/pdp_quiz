@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:pdp_quiz/core/config/routes.dart';
 import 'package:pdp_quiz/core/theme/colors.dart';
 import 'package:pdp_quiz/core/theme/dimens.dart';
 import '../../core/widgets/main_elevated_button.dart';
@@ -14,77 +15,80 @@ class SignIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 70),
-      child: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(
-              width: 205,
-              height: 65,
-              child: AppIcons.pdp,
-            ),
-            SizedBox(height: 40),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Text("Hello,", style: AppTextStyles.helloStyle),
-            ),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Text("You Are Welcome", style: AppTextStyles.welcomeStyle),
-            ),
-            SizedBox(height: 50),
-            SizedBox(
-              height: 66,
-              child: MainTextField(
-                label: "Phone Number",
-                hint: "+998",
-              ),
-            ),
-            AppDimens.s24,
-            SizedBox(
-              height: 60,
-              width: double.infinity,
-              child: MainElevatedButton(
-                text: "Sign In",
-              ),
-            ),
-            AppDimens.s24,
-            OrSignInWith(),
-            AppDimens.s24,
-            SizedBox(
-              width: 55,
-              height: 55,
-              child: Material(
-                color: AppColors.white,
-                elevation: 4,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12)),
-                child: AppIcons.googleBut,
-              ),
-            ),
-            SizedBox(height: 40),
-            RichText(
-              text: TextSpan(
+        backgroundColor: AppColors.white,
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: AppDimens.h40v70,
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  TextSpan(
-                    text: "Don't have an account?",
-                    style: AppTextStyles.dHAnAccount
+                  SizedBox(
+                    width: 205,
+                    height: 65,
+                    child: AppIcons.pdp,
                   ),
-                  TextSpan(
-                    text: " Sign In",
-                    style: AppTextStyles.signInOut,
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = (){
-                      }
+                  SizedBox(height: 40),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text("Hello,", style: AppTextStyles.helloStyle),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text("You Are Welcome",
+                        style: AppTextStyles.welcomeStyle),
+                  ),
+                  SizedBox(height: 50),
+                  SizedBox(
+                    height: 66,
+                    child: MainTextField(
+                      label: "Phone Number",
+                      hint: "+998",
+                    ),
+                  ),
+                  AppDimens.s24,
+                  SizedBox(
+                    height: 60,
+                    width: double.infinity,
+                    child: MainElevatedButton(
+                      text: "Sign In",
+                      onTapped: (){
+                        Navigator.pushReplacementNamed(context, AppRoutes.signUp);
+                      },
+                    ),
+                  ),
+                  AppDimens.s24,
+                  OrSignInWith(),
+                  AppDimens.s24,
+                  SizedBox(
+                    width: 55,
+                    height: 55,
+                    child: Material(
+                      color: AppColors.white,
+                      elevation: 4,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12)),
+                      child: AppIcons.googleBut,
+                    ),
+                  ),
+                  SizedBox(height: 40),
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                            text: "Don't have an account?",
+                            style: AppTextStyles.dHAnAccount),
+                        TextSpan(
+                            text: " Sign Up",
+                            style: AppTextStyles.signInOut,
+                            recognizer: TapGestureRecognizer()..onTap = () {})
+                      ],
+                    ),
                   )
                 ],
               ),
-            )
-          ],
+            
+          ),
         ),
-      ),
-    ));
+    );
   }
 }

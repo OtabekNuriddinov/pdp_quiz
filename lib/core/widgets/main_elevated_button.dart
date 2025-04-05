@@ -4,8 +4,10 @@ import '../theme/colors.dart';
 
 class MainElevatedButton extends StatelessWidget {
   final String text;
+  final void Function() onTapped;
   const MainElevatedButton({
     required this.text,
+    required this.onTapped,
     super.key,
   });
 
@@ -15,8 +17,8 @@ class MainElevatedButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.green,
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12))),
-      onPressed: () {},
+              borderRadius: BorderRadius.circular(8))),
+      onPressed: onTapped,
       child: Text(
         text,
         style: TextStyle(
