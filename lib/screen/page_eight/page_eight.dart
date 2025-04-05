@@ -1,10 +1,8 @@
 
 import 'package:flutter/material.dart';
-
+import '/screen/page_eight/page_eight_components/custom_button.dart';
+import '/screen/page_eight/page_eight_components/timer_card.dart';
 import '../../core/theme/icons.dart';
-import 'components/custom_button.dart';
-import 'components/timer_card.dart';
-
 
 void main() {
   runApp(const MyApp());
