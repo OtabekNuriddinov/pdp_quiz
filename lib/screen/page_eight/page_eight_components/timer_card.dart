@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import '../../../core/theme/colors.dart';
 
 class TimerCard extends StatefulWidget {
-  const TimerCard({super.key});
+  final String question;
+  const TimerCard({super.key, required this.question});
 
   @override
   TimerCardState createState() => TimerCardState();
@@ -47,15 +48,20 @@ class TimerCardState extends State<TimerCard> {
       children: [
         Container(
           width: 280,
-          height: 140,
+          height: 192,
           decoration: BoxDecoration(
-            color: Colors.green,
+            color: AppColors.green2,
             borderRadius: BorderRadius.circular(12),
           ),
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.only(
+            top: 40,
+            left: 10,
+            right: 10,
+            bottom: 10,
+          ),
           alignment: Alignment.center,
-          child: const Text(
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          child: Text(
+            widget.question,
             style: TextStyle(color: Colors.white, fontSize: 16),
             textAlign: TextAlign.center,
           ),
