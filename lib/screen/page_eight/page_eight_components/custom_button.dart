@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pdp_quiz/core/theme/dimens.dart';
 
 import '../../../core/theme/colors.dart';
 
@@ -20,15 +21,23 @@ class CustomButton extends StatelessWidget {
           width: 2,
         ),
       ),
-      child: MaterialButton(
-        onPressed: () {},
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-        child: Text(
-          "$variant.  $question",
-          style: const TextStyle(fontSize: 16, color: Colors.black),
+      child: SizedBox(
+        height: AppDimens.d54,
+        width:AppDimens.d335,
+        child: MaterialButton(
+          onPressed: () {},
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+          child: RichText(
+            text: TextSpan(children: [
+              TextSpan(
+                  text: "$variant. ",
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+              TextSpan(text: "$question"),
+            ]),
+          ),
         ),
       ),
     );
