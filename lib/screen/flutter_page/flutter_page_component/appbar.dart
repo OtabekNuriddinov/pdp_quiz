@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:pdp_quiz/core/theme/colors.dart';
 
 import '../../../core/theme/icons.dart';
 
@@ -8,7 +10,7 @@ AppBar customAppBar(BuildContext context) {
   }
 
   return AppBar(
-    backgroundColor: Colors.black12,
+    backgroundColor: AppColors.white,
     leading: GestureDetector(
       onTap: _back,
       child: Align(
@@ -22,7 +24,7 @@ AppBar customAppBar(BuildContext context) {
             Icon(Icons.arrow_back_rounded),
             Text(
               "Back",
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+              style:  GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 16),
             ),
           ],
         ),
@@ -43,7 +45,7 @@ AppBar customAppBar(BuildContext context) {
         ),
         Text(
           "Flutter",
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          style:  GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 20),
         )
       ],
     ),
