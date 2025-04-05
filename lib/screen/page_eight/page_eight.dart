@@ -1,7 +1,6 @@
-import 'dart:async';
+
 import 'package:flutter/material.dart';
 
-import '../../core/theme/colors.dart';
 import '../../core/theme/icons.dart';
 import 'components/custom_button.dart';
 import 'components/timer_card.dart';
