@@ -1,0 +1,43 @@
+<svg width="21" height="26" viewBox="0 0 21 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_1_1167" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="21" height="26">
+<path d="M20.9963 11.9975L13.9975 18.9987L20.9963 26H12.9988L5.9975 18.9987L12.9988 11.9975H20.9963ZM12.9988 0L0 12.9987L4 16.9987L20.9963 0H12.9988Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_1_1167)">
+<path d="M6 18.9987L9.9975 22.9987L20.9962 11.9975H12.9987L6 18.9987Z" fill="#39CEFD"/>
+</g>
+<mask id="mask1_1_1167" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="21" height="26">
+<path d="M20.9963 11.9975L13.9975 18.9987L20.9963 26H12.9988L5.9975 18.9987L12.9988 11.9975H20.9963ZM12.9988 0L0 12.9987L4 16.9987L20.9963 0H12.9988Z" fill="white"/>
+</mask>
+<g mask="url(#mask1_1_1167)">
+<path d="M12.9988 0H20.9963L4 16.9987L0 12.9987L12.9988 0Z" fill="#39CEFD"/>
+</g>
+<mask id="mask2_1_1167" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="21" height="26">
+<path d="M20.9963 11.9975L13.9975 18.9987L20.9963 26H12.9988L5.9975 18.9987L12.9988 11.9975H20.9963ZM12.9988 0L0 12.9987L4 16.9987L20.9963 0H12.9988Z" fill="white"/>
+</mask>
+<g mask="url(#mask2_1_1167)">
+<path d="M9.99756 22.9981L12.9988 25.9969H20.9963L13.9976 18.9981L9.99756 22.9981Z" fill="#03569B"/>
+</g>
+<mask id="mask3_1_1167" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="21" height="26">
+<path d="M20.9963 11.9975L13.9975 18.9987L20.9963 26H12.9988L5.9975 18.9987L12.9988 11.9975H20.9963ZM12.9988 0L0 12.9987L4 16.9987L20.9963 0H12.9988Z" fill="white"/>
+</mask>
+<g mask="url(#mask3_1_1167)">
+<path d="M15.93 20.943L13.9976 18.9981L9.99756 22.9981L15.93 20.943Z" fill="url(#paint0_linear_1_1167)"/>
+</g>
+<mask id="mask4_1_1167" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="21" height="26">
+<path d="M20.9963 11.9975L13.9975 18.9987L20.9963 26H12.9988L5.9975 18.9987L12.9988 11.9975H20.9963ZM12.9988 0L0 12.9987L4 16.9987L20.9963 0H12.9988Z" fill="white"/>
+</mask>
+<g mask="url(#mask4_1_1167)">
+<path d="M5.99951 18.9975L9.99961 14.9974L14 18.9975L9.99961 22.9976L5.99951 18.9975Z" fill="#16B9FD"/>
+</g>
+<path d="M20.9963 11.9975L13.9975 18.9987L20.9963 26H12.9988L5.9975 18.9987L12.9988 11.9975H20.9963ZM12.9988 0L0 12.9987L4 16.9987L20.9963 0H12.9988Z" fill="url(#paint1_radial_1_1167)"/>
+<defs>
+<linearGradient id="paint0_linear_1_1167" x1="11.1649" y1="23.77" x2="14.144" y2="20.7909" gradientUnits="userSpaceOnUse">
+<stop stop-color="#1A237E" stop-opacity="0.4"/>
+<stop offset="1" stop-color="#1A237E" stop-opacity="0"/>
+</linearGradient>
+<radialGradient id="paint1_radial_1_1167" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0.589856 1.77208) scale(31.8078 31.8078)">
+<stop stop-color="white" stop-opacity="0.1"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>

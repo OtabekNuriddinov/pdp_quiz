@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:pdp_quiz/core/icon/icon.dart';
-import 'package:pdp_quiz/core/widget/fluttew_widget.dart';
 
-import '../core/color/app_color.dart';
+import '../core/theme/colors.dart';
+import '../core/theme/icons.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -24,9 +24,11 @@ class MyApp extends StatelessWidget {
           title: const Text("Title ham qoyinglar"),
           centerTitle: true,
           actions: [
-            const CircleAvatar(
-              child: Center(child: FlutterIcon.flutterIcon),
+            CircleAvatar(
               radius: 20,
+              child: Center(
+                  child: AppIcons.littleFlutter
+              ),
             )
           ],
         ),
@@ -40,7 +42,7 @@ class MyApp extends StatelessWidget {
             const SizedBox(
               height: 15,
             ),
-            Container(
+            SizedBox(
               width: 335,
               height: 202,
               child: Column(
@@ -48,7 +50,7 @@ class MyApp extends StatelessWidget {
                 children: [
                   for (var i = 0; i < 3; i++)
                     CustomButton(
-                        question: "$i saol",
+                        question: "$i savol",
                         variant: "${i + i} savollar boladi "),
                   const SizedBox(
                     height: 15,
@@ -59,9 +61,9 @@ class MyApp extends StatelessWidget {
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(items: [
-          BottomNavigationBarItem(icon: AppIcon.home, label: ''),
-          BottomNavigationBarItem(icon: AppIcon.center, label: ''),
-          BottomNavigationBarItem(icon: AppIcon.person, label: ''),
+          BottomNavigationBarItem(icon: AppIcons.home, label: ''),
+          BottomNavigationBarItem(icon: AppIcons.grade, label: ''),
+          BottomNavigationBarItem(icon: AppIcons.profile, label: ''),
         ]),
       ),
     );
@@ -69,11 +71,13 @@ class MyApp extends StatelessWidget {
 }
 
 class TimerCard extends StatefulWidget {
+  const TimerCard({super.key});
+
   @override
-  _TimerCardState createState() => _TimerCardState();
+  TimerCardState createState() => TimerCardState();
 }
 
-class _TimerCardState extends State<TimerCard> {
+class TimerCardState extends State<TimerCard> {
   int _counter = 20;
   late Timer _timer;
 
@@ -129,14 +133,6 @@ class _TimerCardState extends State<TimerCard> {
             children: [
               /// todo timer cicrle
               Container(
-                child: Container(
-                  width: 60,
-                  height: 60,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: AppColors.green,
-                  ),
-                ),
                 padding: EdgeInsets.all(2),
 
                 ///todo oq rangi
@@ -145,6 +141,14 @@ class _TimerCardState extends State<TimerCard> {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: AppColors.white,
+                ),
+                child: Container(
+                  width: 60,
+                  height: 60,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: AppColors.green2,
+                  ),
                 ),
               ),
 
