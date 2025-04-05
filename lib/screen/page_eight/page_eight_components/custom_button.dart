@@ -22,8 +22,8 @@ class CustomButton extends StatelessWidget {
         ),
       ),
       child: SizedBox(
-        height: AppDimens.d54,
-        width:AppDimens.d335,
+        height: 54,
+        width:335,
         child: MaterialButton(
           onPressed: () {},
           shape: RoundedRectangleBorder(

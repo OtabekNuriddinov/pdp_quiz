@@ -91,7 +91,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin{
                     ),
                   ),
 
-                  AppDimens.s36,
+                  SizedBox(height: 36),
 
                   SlideTransition(
                     position: _animations[2],
@@ -101,7 +101,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin{
                     ),
                   ),
 
-                  AppDimens.s36,
+                  SizedBox(height: 36),
 
                   SlideTransition(
                     position: _animations[3],
@@ -111,7 +111,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin{
                     ),
                   ),
 
-                  AppDimens.s36,
+                  SizedBox(height: 36),
 
                   SlideTransition(
                     position: _animations[4],

@@ -5,6 +5,8 @@ sealed class AppStrings{
   static const dHAccount = "Don't have an account?";
   static const signUp = "Sign up";
   static const phone = "Phone Number";
+  static const back = "Back";
+  static const flutter = "Flutter";
 
   /// For SignIn Screen
   static const hello = "Hello,";
