@@ -23,7 +23,7 @@ class CustomButton extends StatelessWidget {
       ),
       child: SizedBox(
         height: 54,
-        width:335,
+        width: 335,
         child: MaterialButton(
           onPressed: () {},
           shape: RoundedRectangleBorder(
