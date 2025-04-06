@@ -6,17 +6,29 @@ import '/screen/page_eight/page_eight_components/timer_card.dart';
 import '../../core/theme/icons.dart';
 /// todo custom variant and question
 List<String> variant=["A","B","C"]; ///variant name
-List<String> answer=["Quisque sit","Lorem ipsum","Phasellus auctor"]; ///answer
-List<String> question=["Lorem ipsum dolor sit amet, consectetur adipiscing elit.Quesqie sit amet welit malesuada ,sceleresque diam non ,blandit neque. "];
+List<String> answer=["Quisque sit","Lorem ipsum","Phasellus auctor"]; ///vari
+List<String> question=[
+  " 1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.Quesqie sit amet welit malesuada ,sceleresque diam non ,blandit neque. ",
+  " 2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.Quesqie sit amet welit malesuada ,sceleresque diam non ,blandit neque. ",
+  " 3 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.Quesqie sit amet welit malesuada ,sceleresque diam non ,blandit neque. ",
+  " 4 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.Quesqie sit amet welit malesuada ,sceleresque diam non ,blandit neque. ",
+];
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+int count=0;
+
+class _MyAppState extends State<MyApp> {
+  @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -27,7 +39,7 @@ class MyApp extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            Align(alignment: Alignment.topCenter, child: TimerCard(question: question.first,)),
+            Align(alignment: Alignment.topCenter, child: TimerCard(question: question[count],)),/// countt listni elementini bilidradi
             const SizedBox(
               height: 15,
             ),
@@ -41,6 +53,12 @@ class MyApp extends StatelessWidget {
                   CustomButton(
                         variant: variant[i],
                     question: answer[i],
+                    onPressed: () {
+                          setState(() {
+                            count+=1;
+                          //  if(count==question.length) todo next page ga o'tishis kerak va  correct va  incorrect natijani  berishim kerak page ga
+                          });
+                    },
                   ),
 
                 ],
@@ -61,6 +79,7 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+
 /// todo appBar
   AppBar _buildAppBar() {
     return AppBar(
