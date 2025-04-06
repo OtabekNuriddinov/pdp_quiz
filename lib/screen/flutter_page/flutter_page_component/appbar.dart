@@ -1,54 +1,74 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pdp_quiz/core/theme/colors.dart';
+import 'package:pdp_quiz/core/theme/icons.dart';
 
-import '../../../core/theme/icons.dart';
+class FlutterAppBar extends StatelessWidget {
+  final VoidCallback onBackPressed;
 
-AppBar customAppBar(BuildContext context) {
-  _back() {
-    Navigator.pop(context);
-  }
+  const FlutterAppBar({super.key, required this.onBackPressed});
 
-  return AppBar(
-    backgroundColor: AppColors.white,
-    leading: GestureDetector(
-      onTap: _back,
-      child: Align(
-        alignment: Alignment(1, -0.7),
-        child: Row(
-          spacing: 4,
-          children: [
-            SizedBox(
-              width: 10,
+  @override
+  Widget build(BuildContext context) {
+    return SliverAppBar(
+      backgroundColor: Colors.white,
+      expandedHeight: 220,
+      pinned: true,
+      flexibleSpace: LayoutBuilder(
+        builder: (context, constraints) {
+          final collapsed = constraints.maxHeight <= kToolbarHeight + 40;
+          return FlexibleSpaceBar(
+            centerTitle: true,
+            titlePadding: const EdgeInsets.only(bottom: 12),
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                if (!collapsed)
+                  const SizedBox(width: 40)
+                else
+                  const SizedBox.shrink(),
+                Expanded(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      if (!collapsed)
+                        SizedBox(
+                          height: 60,
+                          width: 60,
+                          child: AppIcons.littleFlutter,
+                        ),
+                      if (!collapsed) const SizedBox(height: 2),
+                      Text(
+                        'Flutter',
+                        style: GoogleFonts.poppins(fontSize: 14),
+                      ),
+                    ],
+                  ),
+                ),
+                collapsed
+                    ? const FlutterLogo(size: 20)
+                    : const SizedBox(width: 40),
+              ],
             ),
-            Icon(Icons.arrow_back_rounded),
-            Text(
-              "Back",
-              style:  GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 16),
-            ),
-          ],
+          );
+        },
+      ),
+      leading: GestureDetector(
+        onTap: onBackPressed,
+        child: const Align(
+          alignment: Alignment(1, 0.8),
+          child: Row(
+            children: [
+              SizedBox(width: 10),
+              Icon(Icons.arrow_back_rounded),
+              Text(
+                "Back",
+                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
+              ),
+            ],
+          ),
         ),
       ),
-    ),
-    leadingWidth: 90,
-    centerTitle: true,
-    title: Column(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      spacing: 24,
-      children: [
-        SizedBox(
-          height: 120,
-          width: 120,
-          child: AppIcons.littleFlutter,
-        ),
-        Text(
-          "Flutter",
-          style:  GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 20),
-        )
-      ],
-    ),
-    toolbarHeight: 200,
-  );
+      leadingWidth: 90,
+    );
+  }
 }
