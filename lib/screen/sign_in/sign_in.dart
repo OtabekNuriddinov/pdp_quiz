@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:pdp_quiz/core/config/routes.dart';
 import 'package:pdp_quiz/core/theme/colors.dart';
 import 'package:pdp_quiz/core/theme/dimens.dart';
+import 'package:pdp_quiz/core/theme/strings.dart';
 import '../../core/widgets/main_elevated_button.dart';
 import '../../core/widgets/main_textfield.dart';
 import '../../core/widgets/or_sign_in_with.dart';
@@ -80,7 +81,7 @@ class _SignInState extends State<SignIn> with TickerProviderStateMixin {
                 position: _animations[1],
                 child: Align(
                   alignment: Alignment.centerLeft,
-                  child: Text("Hello,", style: AppTextStyles.helloStyle),
+                  child: Text(AppStrings.hello, style: AppTextStyles.helloStyle),
                 ),
               ),
 
@@ -89,7 +90,7 @@ class _SignInState extends State<SignIn> with TickerProviderStateMixin {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child:
-                      Text("You Are Welcome", style: AppTextStyles.welcomeStyle),
+                      Text(AppStrings.welcome, style: AppTextStyles.welcomeStyle),
                 ),
               ),
               SizedBox(height: 50),
@@ -99,7 +100,7 @@ class _SignInState extends State<SignIn> with TickerProviderStateMixin {
                 child: SizedBox(
                   height: 66,
                   child: MainTextField(
-                    label: "Phone Number",
+                    label: AppStrings.phone,
                     hint: "+998",
                   ),
                 ),
@@ -149,7 +150,7 @@ class _SignInState extends State<SignIn> with TickerProviderStateMixin {
                   text: TextSpan(
                     children: [
                       TextSpan(
-                          text: "Don't have an account?",
+                          text: AppStrings.dHAccount,
                           style: AppTextStyles.dHAnAccount),
                       TextSpan(
                           text: " Sign Up",
