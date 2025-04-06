@@ -11,6 +11,12 @@ sealed class AppIcons{
 
   /// For Home Screen
   static SvgPicture grade = SvgPicture.asset("assets/icons/grade.svg");
+  static SvgPicture gradeGreen = SvgPicture.asset("assets/icons/gradeIcon_green.svg");
+
   static SvgPicture home = SvgPicture.asset("assets/icons/home.svg");
+  static SvgPicture homeBlack = SvgPicture.asset("assets/icons/homeIcon_black.svg");
+
   static SvgPicture profile = SvgPicture.asset("assets/icons/profile.svg");
+  static SvgPicture profileGreen = SvgPicture.asset("assets/icons/profileIcon_green.svg");
+
 }

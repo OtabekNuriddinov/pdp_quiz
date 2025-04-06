@@ -1,9 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class ProfileScreen extends StatelessWidget {
+void main(){
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: ProfileScreen(),
+    );
+  }
+}
+
+
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+
+  int currentINdex = 2;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,6 +108,9 @@ class ProfileScreen extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 2,
+        onTap: (index){
+          print(index);
+        },
         selectedItemColor: Colors.green,
         unselectedItemColor: Colors.grey,
         showSelectedLabels: false,
