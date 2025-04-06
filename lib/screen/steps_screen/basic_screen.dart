@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pdp_quiz/core/config/routes.dart';
 import 'package:pdp_quiz/core/theme/colors.dart';
+import 'package:pdp_quiz/core/theme/icons.dart';
+import 'package:pdp_quiz/core/widgets/custom_bottom_nav_bar.dart';
+import '../../core/widgets/main_elevated_button.dart';
 import 'helpers.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(LevelScreen());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class LevelScreen extends StatelessWidget {
+  const LevelScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,33 +38,27 @@ class _HomeState extends State<Home> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: AppColors.white,
-        title: Padding(
-          padding: const EdgeInsets.all(8.0),
-
-          ///#appBar
-          child: Row(
-            children: [
-              Icon(
-                Icons.arrow_back,
-                color: Colors.black,
-                size: 25,
-              ),
-              SizedBox(
-                width: 20,
-              ),
-              Text("Lorem ipsum dolor sit amet c...",
-                  style: TextStyle(fontSize: 20)),
-              SizedBox(
-                width: 17,
-              ),
-              Image.asset(
-                "assets/icons/flutter.png",
-                height: 55,
-                width: 55,
-              )
-            ],
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+            size: 25,
           ),
         ),
+        title: Text("Lorem ipsum dolor ", style: TextStyle(fontSize: 20)),
+        actions: [
+          SizedBox(
+            height: 20,
+            width: 20,
+            child: AppIcons.littleFlutter,
+          ),
+          SizedBox(
+            width: 20,
+          )
+        ],
       ),
 
       ///#body
@@ -114,38 +112,56 @@ class _HomeState extends State<Home> {
             ),
 
             ///#main buttons
-            GestureDetector(onTap: () {
-
-            }, child: mainButtons("Easy")),
+            SizedBox(
+              height: 60,
+              width: 280,
+              child: MainElevatedButton(
+                text: "Easy",
+                onTapped: () {
+                  Navigator.pushNamed(
+                    context,
+                    AppRoutes.eight,
+                  );
+                },
+              ),
+            ),
             SizedBox(
               height: 28,
             ),
-            GestureDetector(onTap: () {
-
-            }, child: mainButtons("Medium")),
+            SizedBox(
+              height: 60,
+              width: 280,
+              child: MainElevatedButton(
+                text: "Medium",
+                onTapped: () {
+                  Navigator.pushNamed(
+                    context,
+                    AppRoutes.eight,
+                  );
+                },
+              ),
+            ),
             SizedBox(
               height: 28,
             ),
-            GestureDetector(onTap: () {
-
-            }, child: mainButtons("Hard")),
+            SizedBox(
+              height: 60,
+              width: 280,
+              child: MainElevatedButton(
+                text: "Hard",
+                onTapped: () {
+                  Navigator.pushNamed(
+                    context,
+                    AppRoutes.eight,
+                  );
+                },
+              ),
+            ),
             SizedBox(height: 30)
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        selectedItemColor: AppColors.green,
-        unselectedItemColor: AppColors.black,
-        items: [
-          BottomNavigationBarItem(
-              icon: SvgPicture.asset("assets/icons/home.svg"), label: ''),
-          BottomNavigationBarItem(
-              icon: SvgPicture.asset("assets/icons/grade.svg"), label: ''),
-          BottomNavigationBarItem(
-              icon: SvgPicture.asset("assets/icons/profile.svg"), label: ''),
-        ],
-      ),
+      bottomNavigationBar: bottomNavigationBar(0, context),
     );
   }
 }

@@ -17,7 +17,7 @@ class LessonsList extends StatelessWidget {
               onTap: (){
                 Navigator.pushNamed(
                   context,
-                  AppRoutes.eight,
+                  AppRoutes.level,
                 );
               },
               child: Container(

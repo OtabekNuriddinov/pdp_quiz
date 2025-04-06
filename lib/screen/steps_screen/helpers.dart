@@ -63,3 +63,13 @@ Widget mainButtons(String text1) {
     ),
   );
 }
+
+class MaterButCustom extends StatelessWidget {
+  const MaterButCustom({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialButton(onPressed: (){});
+  }
+}
+
