@@ -126,6 +126,7 @@ class _SignInState extends State<SignIn> with TickerProviderStateMixin {
                 child: SizedBox(
                   width: 55,
                   height: 55,
+
                   child: Material(
                     color: AppColors.white,
                     elevation: 4,

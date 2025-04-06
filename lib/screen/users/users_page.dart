@@ -133,7 +133,8 @@ class _UsersPageState extends State<UsersPage> {
             BottomNavigationBarItem(icon: SvgPicture.asset("assets/icons/home.svg"), label: ''),
             BottomNavigationBarItem(icon: SvgPicture.asset("assets/icons/grade.svg"), label: ''),
             BottomNavigationBarItem(icon: SvgPicture.asset("assets/icons/profile.svg"), label: ''),
-          ]),
+          ],
+      ),
     );
   }
 }
