@@ -134,6 +134,7 @@ class _SignInState extends State<SignIn> with TickerProviderStateMixin {
                         borderRadius: BorderRadius.circular(12)),
                     child: AppIcons.googleBut,
                   ),
+
                 ),
               ),
               SizedBox(height: 40),
