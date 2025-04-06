@@ -50,4 +50,17 @@ sealed class AppTextStyles {
     fontWeight: FontWeight.w400,
     color: AppColors.grey100
   );
+
+  static const TextStyle appBarTitle = TextStyle(
+    fontSize: 24,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
+
+  static const TextStyle techItemName = TextStyle(
+    fontSize: 16,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w500,
+  );
 }
