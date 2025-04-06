@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class PDPKeypadScreen extends StatefulWidget {
-  const PDPKeypadScreen({Key? key}) : super(key: key);
+  const PDPKeypadScreen({super.key});
 
   @override
   State<PDPKeypadScreen> createState() => _PDPKeypadScreenState();

@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:pdp_quiz/core/theme/colors.dart';
-import 'package:pdp_quiz/core/theme/dimens.dart';
 import '/screen/page_eight/page_eight_components/custom_button.dart';
 import '/screen/page_eight/page_eight_components/timer_card.dart';
 import '../../core/theme/icons.dart';
