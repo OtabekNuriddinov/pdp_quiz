@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../../core/config/routes.dart';
 import '../../core/theme/colors.dart';
 import '../../core/theme/dimens.dart';
 import '../../core/theme/strings.dart';
@@ -71,31 +72,39 @@ class _HomeScreenState extends State<HomeScreen> {
           itemBuilder: (context, index) {
             bool isPng = AppStrings.techItems[index]['icons']!.endsWith('.png');
 
-            return Card(
-              elevation: AppDimens.cardElevation,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(AppDimens.cardBorderRadius),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  isPng
-                      ? Image.asset(
-                    AppStrings.techItems[index]['icons']!,
-                    height: AppDimens.gridIconSize,
-                    width: AppDimens.gridIconSize,
-                  )
-                      : SvgPicture.asset(
-                    AppStrings.techItems[index]['icons']!,
-                    height: AppDimens.gridIconSize,
-                    width: AppDimens.gridIconSize,
-                  ),
-                  SizedBox(height: AppDimens.gridTextSpacing),
-                  Text(
-                    AppStrings.techItems[index]['name']!,
-                    style: AppTextStyles.techItemName,
-                  ),
-                ],
+            return GestureDetector(
+              onTap: (){
+                Navigator.pushNamed(
+                  context,
+                  AppRoutes.flutter,
+                );
+              },
+              child: Card(
+                elevation: AppDimens.cardElevation,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(AppDimens.cardBorderRadius),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    isPng
+                        ? Image.asset(
+                      AppStrings.techItems[index]['icons']!,
+                      height: AppDimens.gridIconSize,
+                      width: AppDimens.gridIconSize,
+                    )
+                        : SvgPicture.asset(
+                      AppStrings.techItems[index]['icons']!,
+                      height: AppDimens.gridIconSize,
+                      width: AppDimens.gridIconSize,
+                    ),
+                    SizedBox(height: AppDimens.gridTextSpacing),
+                    Text(
+                      AppStrings.techItems[index]['name']!,
+                      style: AppTextStyles.techItemName,
+                    ),
+                  ],
+                ),
               ),
             );
           },

@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../core/config/routes.dart';
+
 class PDPKeypadScreen extends StatefulWidget {
   const PDPKeypadScreen({super.key});
 
@@ -16,6 +18,7 @@ class _PDPKeypadScreenState extends State<PDPKeypadScreen> {
   void onKeyPress(BuildContext context, String value) {
     if (value == "delete") {
       setState(() {
+
         if (code.isNotEmpty) {
           code = code.substring(0, code.length - 1);
         }
@@ -27,6 +30,13 @@ class _PDPKeypadScreenState extends State<PDPKeypadScreen> {
       // );
     } else if (code.length < 4) {
       setState(() {
+        if(code.length == 3){
+          Navigator.pushReplacementNamed(
+            context,
+            AppRoutes.home,
+          );
+          return;
+        }
         code += value;
       });
     }
@@ -55,20 +65,18 @@ class _PDPKeypadScreenState extends State<PDPKeypadScreen> {
                       ),
                       const SizedBox(width: 10),
                       // PDP Academy Text
-
                     ],
                   ),
                 ),
               ),
             ),
-
             // Code input fields
             SliverToBoxAdapter(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: List.generate(
                   4,
-                      (index) => Container(
+                  (index) => Container(
                     margin: const EdgeInsets.symmetric(horizontal: 8),
                     width: 60,
                     height: 60,
@@ -115,7 +123,7 @@ class _PDPKeypadScreenState extends State<PDPKeypadScreen> {
 
             // Empty space
             const SliverToBoxAdapter(
-              child: SizedBox(height: 120),
+              child: SizedBox(height: 150),
             ),
 
             // Numeric keypad using buttons
@@ -129,7 +137,7 @@ class _PDPKeypadScreenState extends State<PDPKeypadScreen> {
                   mainAxisSpacing: 12,
                 ),
                 delegate: SliverChildBuilderDelegate(
-                      (context, index) {
+                  (context, index) {
                     late String keyValue;
                     late Widget keyChild;
 

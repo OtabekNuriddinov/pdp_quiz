@@ -73,8 +73,8 @@ class _MyAppState extends State<MyApp> {
             items: [
 
           BottomNavigationBarItem(icon: AppIcons.home, label: ''),
-          BottomNavigationBarItem(icon: AppIcons.center, label: ''),
-          BottomNavigationBarItem(icon: AppIcons.person, label: ''),
+          BottomNavigationBarItem(icon: AppIcons.grade, label: ''),
+          BottomNavigationBarItem(icon: AppIcons.profile, label: ''),
         ]),
       ),
     );
