@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pdp_quiz/core/config/routes.dart';
+import 'package:pdp_quiz/screen/profile_screen/profile_screen.dart';
 
 BottomNavigationBar bottomNavigationBar(int active, BuildContext context) {
   return BottomNavigationBar(
@@ -22,10 +23,7 @@ BottomNavigationBar bottomNavigationBar(int active, BuildContext context) {
           }
         case 2:
           {
-            Navigator.pushReplacementNamed(
-              context,
-              AppRoutes.profile,
-            );
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfileScreen()));
           }
       }
     },

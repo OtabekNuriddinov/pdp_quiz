@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pdp_quiz/core/config/routes.dart';
+import 'package:pdp_quiz/screen/steps_screen/basic_screen.dart';
 
 import '../../../core/theme/colors.dart';
 
@@ -15,10 +16,7 @@ class LessonsList extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 8),
             child: GestureDetector(
               onTap: (){
-                Navigator.pushNamed(
-                  context,
-                  AppRoutes.level,
-                );
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>LevelScreen()));
               },
               child: Container(
                 alignment: Alignment.center,

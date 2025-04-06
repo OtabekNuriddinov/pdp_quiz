@@ -8,6 +8,7 @@ import 'package:pdp_quiz/screen/sign_in_sms/sign_in_sms.dart';
 import 'package:pdp_quiz/screen/sign_up/sign_up.dart';
 import 'package:pdp_quiz/screen/splash_screen/splash_screen.dart';
 import 'package:pdp_quiz/screen/steps_screen/basic_screen.dart';
+import 'package:pdp_quiz/screen/users/users_page.dart';
 
 sealed class AppRoutes{
   static const splash = 'splash';
@@ -17,8 +18,8 @@ sealed class AppRoutes{
   static const home = 'home';
   static const flutter = 'flutter';
   static const profile = 'profile';
-  static const eight = 'eight';
   static const level = 'level';
+  static const users = 'users';
 
   static Map<String, Widget Function(BuildContext)> routes = <String, WidgetBuilder>{
     AppRoutes.splash: (context)=>const SplashScreen(),
@@ -28,8 +29,7 @@ sealed class AppRoutes{
     AppRoutes.home : (context)=>const HomeScreen(),
     AppRoutes.flutter : (context)=>const FlutterPage(),
     AppRoutes.profile : (context)=>const ProfileScreen(),
-    AppRoutes.eight : (context)=>const EightPage(),
     AppRoutes.level : (context)=>const LevelScreen(),
-
+    AppRoutes.users: (context)=>const UsersPage()
   };
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pdp_quiz/core/config/routes.dart';
 import 'package:pdp_quiz/core/theme/colors.dart';
 import 'package:pdp_quiz/core/widgets/custom_bottom_nav_bar.dart';
+import 'package:pdp_quiz/screen/users/users_page.dart';
 import '/screen/page_eight/page_eight_components/custom_button.dart';
 import '/screen/page_eight/page_eight_components/timer_card.dart';
 import '../../core/theme/icons.dart';
@@ -87,7 +88,7 @@ class _EightPageState extends State<EightPage> {
                         if (count < question.length - 1) {
                           count++;
                         } else {
-                          Navigator.pushReplacementNamed(context, AppRoutes.users);
+                         Navigator.push(context, MaterialPageRoute(builder: (context)=>UsersPage()));
                         }
                       });
                     },
