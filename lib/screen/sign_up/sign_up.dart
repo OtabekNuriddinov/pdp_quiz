@@ -59,11 +59,18 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final width = size.width;
+    final height = size.height;
+
     return Scaffold(
       backgroundColor: AppColors.white,
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 26, horizontal: 40),
+          padding: EdgeInsets.symmetric(
+            vertical: height * 0.05,
+            horizontal: width * 0.1,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -71,8 +78,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                 position: _animations[0],
                 child: Align(
                   alignment: Alignment.centerLeft,
-                  child:
-                      Text("Create an account", style: AppTextStyles.createAcc),
+                  child: Text("Create an account", style: AppTextStyles.createAcc),
                 ),
               ),
               SlideTransition(
@@ -85,7 +91,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                   ),
                 ),
               ),
-              SizedBox(height: 36),
+              SizedBox(height: height * 0.04),
               SlideTransition(
                 position: _animations[2],
                 child: MainTextField(
@@ -93,7 +99,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                   hint: AppStrings.enterFirst,
                 ),
               ),
-              SizedBox(height: 36),
+              SizedBox(height: height * 0.04),
               SlideTransition(
                 position: _animations[3],
                 child: MainTextField(
@@ -101,7 +107,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                   hint: AppStrings.enterLast,
                 ),
               ),
-              SizedBox(height: 36),
+              SizedBox(height: height * 0.04),
               SlideTransition(
                 position: _animations[4],
                 child: MainTextField(
@@ -109,7 +115,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                   hint: "+998",
                 ),
               ),
-              AppDimens.s24,
+              SizedBox(height: height * 0.03),
               SlideTransition(
                 position: _animations[5],
                 child: Row(
@@ -125,18 +131,20 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                         });
                       },
                     ),
-                    Text(
-                      AppStrings.acceptTerms,
-                      style: AppTextStyles.acceptStyle,
+                    Flexible(
+                      child: Text(
+                        AppStrings.acceptTerms,
+                        style: AppTextStyles.acceptStyle,
+                      ),
                     ),
                   ],
                 ),
               ),
-              AppDimens.s24,
+              SizedBox(height: height * 0.03),
               SlideTransition(
                 position: _animations[6],
                 child: SizedBox(
-                  height: 60,
+                  height: height * 0.07,
                   width: double.infinity,
                   child: MainElevatedButton(
                     text: AppStrings.signUp,
@@ -149,31 +157,32 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                   ),
                 ),
               ),
-
-              SizedBox(height: 20),
+              SizedBox(height: height * 0.025),
               SlideTransition(
                 position: _animations[7],
                 child: OrSignInWith(),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: height * 0.025),
               SlideTransition(
                 position: _animations[8],
                 child: SizedBox(
-                  width: 55,
-                  height: 55,
+                  width: width * 0.13,
+                  height: width * 0.13,
                   child: Material(
                     color: AppColors.white,
                     elevation: 4,
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12)),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                     child: AppIcons.googleBut,
                   ),
                 ),
               ),
-              SizedBox(height: 36),
+              SizedBox(height: height * 0.04),
               SlideTransition(
                 position: _animations[9],
                 child: RichText(
+                  textAlign: TextAlign.center,
                   text: TextSpan(
                     children: [
                       TextSpan(
@@ -182,7 +191,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                       TextSpan(
                           text: " Sign In",
                           style: AppTextStyles.signInOut,
-                          recognizer: TapGestureRecognizer()..onTap = () {})
+                          recognizer: TapGestureRecognizer()..onTap = () {}),
                     ],
                   ),
                 ),
@@ -193,4 +202,5 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
       ),
     );
   }
+
 }
