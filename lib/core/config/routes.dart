@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pdp_quiz/screen/flutter_page/flutter_page.dart';
 import 'package:pdp_quiz/screen/home_page/home_page.dart';
+import 'package:pdp_quiz/screen/page_eight/page_eight.dart';
+import 'package:pdp_quiz/screen/profile_screen/profile_screen.dart';
 import 'package:pdp_quiz/screen/sign_in/sign_in.dart';
 import 'package:pdp_quiz/screen/sign_in_sms/sign_in_sms.dart';
 import 'package:pdp_quiz/screen/sign_up/sign_up.dart';
@@ -13,6 +15,8 @@ sealed class AppRoutes{
   static const keypad = 'keypad';
   static const home = 'home';
   static const flutter = 'flutter';
+  static const profile = 'profile';
+  static const eight = 'eight';
 
   static Map<String, Widget Function(BuildContext)> routes = <String, WidgetBuilder>{
     AppRoutes.splash: (context)=>const SplashScreen(),
@@ -20,6 +24,9 @@ sealed class AppRoutes{
     AppRoutes.signUp: (context)=>const SignUp(),
     AppRoutes.keypad: (context)=>const PDPKeypadScreen(),
     AppRoutes.home : (context)=>const HomeScreen(),
-    AppRoutes.flutter : (context)=>const FlutterPage()
+    AppRoutes.flutter : (context)=>const FlutterPage(),
+    AppRoutes.profile : (context)=>const ProfileScreen(),
+    AppRoutes.eight : (context)=>const EightPage(),
+
   };
 }

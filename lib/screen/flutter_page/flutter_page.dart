@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pdp_quiz/core/theme/colors.dart';
+import 'package:pdp_quiz/core/widgets/custom_bottom_nav_bar.dart';
 import 'package:pdp_quiz/screen/flutter_page/flutter_page_component/row_item.dart';
 import 'package:pdp_quiz/screen/flutter_page/flutter_page_component/vertical_item.dart';
 
@@ -69,6 +70,7 @@ class _FlutterPageState extends State<FlutterPage> {
             )
           ],
         ),
+        bottomNavigationBar: bottomNavigationBar(0, context),
       ),
     );
   }
