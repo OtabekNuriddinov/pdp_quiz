@@ -33,17 +33,15 @@ class _SignInState extends State<SignIn> with TickerProviderStateMixin {
       ),
     );
 
-    _animations = _controllers.map((controller){
-      return Tween<Offset>(
-        begin: Offset(0, -1),
-        end: Offset(0, 0)
-      ).animate(controller);
+    _animations = _controllers.map((controller) {
+      return Tween<Offset>(begin: Offset(0, -1), end: Offset(0, 0))
+          .animate(controller);
     }).toList();
     _runStaggeredAnimations();
   }
 
-  void _runStaggeredAnimations()async{
-    for(int i=_controllers.length-1; i>=0; i--){
+  void _runStaggeredAnimations() async {
+    for (int i = _controllers.length - 1; i >= 0; i--) {
       await Future.delayed(Duration(milliseconds: 100));
       _controllers[i].forward();
     }
@@ -51,7 +49,7 @@ class _SignInState extends State<SignIn> with TickerProviderStateMixin {
 
   @override
   void dispose() {
-    for(var controller in _controllers){
+    for (var controller in _controllers) {
       controller.dispose();
     }
     super.dispose();
@@ -76,25 +74,23 @@ class _SignInState extends State<SignIn> with TickerProviderStateMixin {
                 ),
               ),
               SizedBox(height: 40),
-
               SlideTransition(
                 position: _animations[1],
                 child: Align(
                   alignment: Alignment.centerLeft,
-                  child: Text(AppStrings.hello, style: AppTextStyles.helloStyle),
+                  child:
+                      Text(AppStrings.hello, style: AppTextStyles.helloStyle),
                 ),
               ),
-
               SlideTransition(
                 position: _animations[2],
                 child: Align(
                   alignment: Alignment.centerLeft,
-                  child:
-                      Text(AppStrings.welcome, style: AppTextStyles.welcomeStyle),
+                  child: Text(AppStrings.welcome,
+                      style: AppTextStyles.welcomeStyle),
                 ),
               ),
               SizedBox(height: 50),
-
               SlideTransition(
                 position: _animations[3],
                 child: SizedBox(
@@ -105,9 +101,7 @@ class _SignInState extends State<SignIn> with TickerProviderStateMixin {
                   ),
                 ),
               ),
-
               AppDimens.s24,
-
               SlideTransition(
                 position: _animations[4],
                 child: SizedBox(
@@ -124,10 +118,9 @@ class _SignInState extends State<SignIn> with TickerProviderStateMixin {
               AppDimens.s24,
               SlideTransition(
                 position: _animations[5],
-                  child: OrSignInWith(),
+                child: OrSignInWith(),
               ),
               AppDimens.s24,
-
               SlideTransition(
                 position: _animations[6],
                 child: SizedBox(
@@ -143,7 +136,6 @@ class _SignInState extends State<SignIn> with TickerProviderStateMixin {
                 ),
               ),
               SizedBox(height: 40),
-
               SlideTransition(
                 position: _animations[7],
                 child: RichText(
