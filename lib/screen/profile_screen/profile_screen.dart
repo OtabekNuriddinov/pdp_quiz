@@ -1,32 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:pdp_quiz/core/widgets/custom_bottom_nav_bar.dart';
 
-void main(){
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: ProfileScreen(),
-    );
-  }
-}
-
-
-class ProfileScreen extends StatefulWidget {
+class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
-  @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
-}
-
-class _ProfileScreenState extends State<ProfileScreen> {
-
-  int currentINdex = 2;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,21 +84,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 2,
-        onTap: (index){
-          print(index);
-        },
-        selectedItemColor: Colors.green,
-        unselectedItemColor: Colors.grey,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        items: [
-          BottomNavigationBarItem(icon: SvgPicture.asset('assets/icons/home.svg'), label: ''),
-          BottomNavigationBarItem(icon: SvgPicture.asset('assets/icons/grade.svg'), label: ''),
-          BottomNavigationBarItem(icon:SvgPicture.asset('assets/icons/profile.svg'), label: ''),
-        ],
-      ),
+      bottomNavigationBar: bottomNavigationBar(2, context),
     );
   }
 

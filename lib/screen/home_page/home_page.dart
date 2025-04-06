@@ -110,10 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
           },
         ),
       ),
-      bottomNavigationBar: CustomBottomNavBar(
-        onItemTapped: _onItemTapped,
-        selectedIndex: _selectedIndex,
-      ),
+      bottomNavigationBar: bottomNavigationBar(0, context),
     );
   }
 }

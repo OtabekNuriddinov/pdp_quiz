@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:pdp_quiz/core/theme/colors.dart';
+import 'package:pdp_quiz/core/widgets/custom_bottom_nav_bar.dart';
 import '/screen/page_eight/page_eight_components/custom_button.dart';
 import '/screen/page_eight/page_eight_components/timer_card.dart';
 import '../../core/theme/icons.dart';
@@ -14,19 +15,19 @@ List<String> question=[
   " 4 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.Quesqie sit amet welit malesuada ,sceleresque diam non ,blandit neque. ",
 ];
 void main() {
-  runApp(const MyApp());
+  runApp(const EightPage());
 }
 
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+class EightPage extends StatefulWidget {
+  const EightPage({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<EightPage> createState() => _EightPageState();
 }
 int count=0;
 
-class _MyAppState extends State<MyApp> {
+class _EightPageState extends State<EightPage> {
   @override
   Widget build(BuildContext context) {
 
@@ -67,16 +68,7 @@ class _MyAppState extends State<MyApp> {
             )
           ],
         ),
-        bottomNavigationBar: BottomNavigationBar(
-            currentIndex: 0,
-            selectedItemColor: AppColors.green,
-            unselectedItemColor: AppColors.black,
-            items: [
-
-          BottomNavigationBarItem(icon: AppIcons.home, label: ''),
-          BottomNavigationBarItem(icon: AppIcons.grade, label: ''),
-          BottomNavigationBarItem(icon: AppIcons.profile, label: ''),
-        ]),
+        bottomNavigationBar: bottomNavigationBar(0, context),
       ),
     );
   }
