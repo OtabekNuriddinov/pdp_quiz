@@ -149,6 +149,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                   ),
                 ),
               ),
+
               SizedBox(height: 20),
               SlideTransition(
                 position: _animations[7],
