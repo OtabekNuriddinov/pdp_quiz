@@ -7,6 +7,7 @@ import 'package:pdp_quiz/core/theme/text_styles.dart';
 import 'package:pdp_quiz/core/widgets/main_elevated_button.dart';
 import 'package:pdp_quiz/core/widgets/main_textfield.dart';
 import 'package:pdp_quiz/core/widgets/or_sign_in_with.dart';
+import 'package:pdp_quiz/screen/sign_in_sms/sign_in_sms.dart';
 
 import '../../core/theme/icons.dart';
 
@@ -156,6 +157,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin{
                       child: MainElevatedButton(
                         text: AppStrings.signUp,
                         onTapped: (){
+                               Navigator.push(context, MaterialPageRoute(builder: (e)=> PDPKeypadScreen()));
                         },
                       ),
                     ),
