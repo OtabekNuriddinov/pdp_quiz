@@ -12,7 +12,7 @@ class ProfileScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            actions:[ Icon(Icons.more_vert)],
+            actions:[Icon(Icons.more_vert)],
             backgroundColor: Colors.white,
             expandedHeight: 250,
             pinned: true,
