@@ -54,13 +54,9 @@ class _UsersPageState extends State<UsersPage> {
             leadingWidth: 82,
             leading: Row(
               children: [
-                Expanded(
-                  child: IconButton(
-                      onPressed: (){
-                        Navigator.pop(context);
-                      },
-                      icon: AppIcons.back
-                  ),
+                IconButton(
+                    onPressed: (){},
+                    icon: AppIcons.back
                 ),
                 Text(AppStrings.back,
                   style: TextStyle(

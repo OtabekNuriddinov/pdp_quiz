@@ -49,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
           AppStrings.greeting,
           style: AppTextStyles.appBarTitle,
         ),
+        leading: SizedBox.shrink(),
         actions: [
           Padding(
             padding: const EdgeInsets.all(AppDimens.appBarPadding),
