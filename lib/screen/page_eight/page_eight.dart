@@ -7,10 +7,8 @@ import '/screen/page_eight/page_eight_components/custom_button.dart';
 import '/screen/page_eight/page_eight_components/timer_card.dart';
 import '../../core/theme/icons.dart';
 
-/// todo custom variant and question
 List<String> variant = ["A", "B", "C"];
 
-///variant name
 List<String> answer = ["Quisque sit", "Lorem ipsum", "Phasellus auctor"];
 
 ///vari
