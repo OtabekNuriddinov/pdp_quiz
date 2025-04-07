@@ -57,29 +57,35 @@ class _SignInState extends State<SignIn> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final width = size.width;
+    final height = size.height;
+
     return Scaffold(
       backgroundColor: AppColors.white,
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 70, horizontal: 40),
+          padding: EdgeInsets.symmetric(
+            vertical: height * 0.08,
+            horizontal: width * 0.1,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SlideTransition(
                 position: _animations[0],
                 child: SizedBox(
-                  width: 205,
-                  height: 65,
+                  width: width * 0.5,
+                  height: height * 0.08,
                   child: AppIcons.pdp,
                 ),
               ),
-              SizedBox(height: 40),
+              SizedBox(height: height * 0.05),
               SlideTransition(
                 position: _animations[1],
                 child: Align(
                   alignment: Alignment.centerLeft,
-                  child:
-                      Text(AppStrings.hello, style: AppTextStyles.helloStyle),
+                  child: Text(AppStrings.hello, style: AppTextStyles.helloStyle),
                 ),
               ),
               SlideTransition(
@@ -90,22 +96,22 @@ class _SignInState extends State<SignIn> with TickerProviderStateMixin {
                       style: AppTextStyles.welcomeStyle),
                 ),
               ),
-              SizedBox(height: 50),
+              SizedBox(height: height * 0.06),
               SlideTransition(
                 position: _animations[3],
                 child: SizedBox(
-                  height: 66,
+                  height: height * 0.08,
                   child: MainTextField(
                     label: AppStrings.phone,
                     hint: "+998",
                   ),
                 ),
               ),
-              AppDimens.s24,
+              SizedBox(height: height * 0.03),
               SlideTransition(
                 position: _animations[4],
                 child: SizedBox(
-                  height: 60,
+                  height: height * 0.07,
                   width: double.infinity,
                   child: MainElevatedButton(
                     text: "Sign In",
@@ -115,27 +121,29 @@ class _SignInState extends State<SignIn> with TickerProviderStateMixin {
                   ),
                 ),
               ),
-              AppDimens.s24,
+
+              SizedBox(height: height * 0.03),
               SlideTransition(
                 position: _animations[5],
                 child: OrSignInWith(),
               ),
-              AppDimens.s24,
+              SizedBox(height: height * 0.03),
               SlideTransition(
                 position: _animations[6],
                 child: SizedBox(
-                  width: 55,
-                  height: 55,
+                  width: width * 0.13,
+                  height: width * 0.13,
                   child: Material(
                     color: AppColors.white,
                     elevation: 4,
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12)),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                     child: AppIcons.googleBut,
                   ),
                 ),
               ),
-              SizedBox(height: 40),
+              SizedBox(height: height * 0.04),
               SlideTransition(
                 position: _animations[7],
                 child: RichText(
@@ -145,9 +153,10 @@ class _SignInState extends State<SignIn> with TickerProviderStateMixin {
                           text: AppStrings.dHAccount,
                           style: AppTextStyles.dHAnAccount),
                       TextSpan(
-                          text: " Sign Up",
-                          style: AppTextStyles.signInOut,
-                          recognizer: TapGestureRecognizer()..onTap = () {})
+                        text: " Sign Up",
+                        style: AppTextStyles.signInOut,
+                        recognizer: TapGestureRecognizer()..onTap = () {},
+                      )
                     ],
                   ),
                 ),
@@ -158,4 +167,5 @@ class _SignInState extends State<SignIn> with TickerProviderStateMixin {
       ),
     );
   }
+
 }

@@ -10,7 +10,10 @@ sealed class AppTextStyles {
   );
 
   static TextStyle welcomeStyle = TextStyle(
-      fontSize: 24, fontFamily: 'Poppins', fontWeight: FontWeight.w400);
+    fontSize: 24,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w400,
+  );
 
   static TextStyle dHAnAccount = TextStyle(
     fontFamily: 'Poppins',
@@ -45,9 +48,21 @@ sealed class AppTextStyles {
   );
 
   static TextStyle acceptStyle = TextStyle(
-    fontSize: 12,
+      fontSize: 12,
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w400,
+      color: AppColors.grey100);
+
+  static const TextStyle appBarTitle = TextStyle(
+    fontSize: 24,
     fontFamily: 'Poppins',
-    fontWeight: FontWeight.w400,
-    color: AppColors.grey100
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
+
+  static const TextStyle techItemName = TextStyle(
+    fontSize: 16,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w500,
   );
 }
