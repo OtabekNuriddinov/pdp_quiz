@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:pdp_quiz/core/widgets/custom_bottom_nav_bar.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -12,7 +13,7 @@ class ProfileScreen extends StatelessWidget {
         slivers: [
 
           SliverAppBar(
-            actions:[ Icon(Icons.more_vert)],
+            actions:[Icon(Icons.more_vert)],
             backgroundColor: Colors.white,
             expandedHeight: 250,
             pinned: true,
@@ -84,18 +85,7 @@ class ProfileScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 2,
-        selectedItemColor: Colors.green,
-        unselectedItemColor: Colors.grey,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        items: [
-          BottomNavigationBarItem(icon: SvgPicture.asset('assets/icons/home.svg'), label: ''),
-          BottomNavigationBarItem(icon: SvgPicture.asset('assets/icons/grade.svg'), label: ''),
-          BottomNavigationBarItem(icon:SvgPicture.asset('assets/icons/profile.svg'), label: ''),
-        ],
-      ),
+      bottomNavigationBar: bottomNavigationBar(2, context),
     );
   }
 

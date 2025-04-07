@@ -23,54 +23,12 @@ class _SplashScreenState extends State<SplashScreen>
     _animationController =
         AnimationController(vsync: this, duration: Duration(seconds: 4));
 
+    Future.delayed(Duration(seconds: 4), () {
+      if (mounted) {
+        Navigator.pushReplacementNamed(context, AppRoutes.signIn);
+      }
+    });
 
-    _opacityAnimation = TweenSequence([
-      TweenSequenceItem(
-        tween: ConstantTween<double>(1.0),
-        weight: 75,
-      ),
-      TweenSequenceItem(
-        tween: Tween<double>(begin: 1.0, end: 0.0),
-        weight: 25,
-      )
-    ]).animate(_animationController);
-
-    /// vertical uchun
-    _verticalAnimation = TweenSequence([
-      TweenSequenceItem(
-        tween: ConstantTween<double>(0.0),
-        weight: 50,
-      ),
-      TweenSequenceItem(
-        tween: Tween<double>(begin: 0.0, end: 300.0),
-        weight: 25,
-      ),
-      TweenSequenceItem(
-        tween: ConstantTween<double>(300.0),
-        weight: 25,
-      )
-    ]).animate(_animationController);
-
-    /// o'nga harakat uchun
-    _horizontalAnimation = TweenSequence([
-      TweenSequenceItem(
-        tween: ConstantTween<double>(0.0),
-        weight: 75,
-      ),
-      TweenSequenceItem(
-        tween: Tween<double>(begin: 0.0, end: 100),
-        weight: 25,
-      )
-    ]).animate(_animationController);
-
-    Future.delayed(
-      Duration(seconds: 4),
-      () {
-        if (mounted) {
-          Navigator.pushReplacementNamed(context, AppRoutes.signIn);
-        }
-      },
-    );
     _animationController.forward();
   }
 
@@ -84,13 +42,39 @@ class _SplashScreenState extends State<SplashScreen>
   Widget build(BuildContext context) {
     final width = MediaQuery.sizeOf(context).width;
     final height = MediaQuery.sizeOf(context).height;
+
+    // Responsive o'lchamlar
+    final logoWidth = width * 0.6;
+    final logoHeight = height * 0.1;
+    final centerX = (width - logoWidth) / 2;
+    final centerY = (height - logoHeight) / 2;
+    final verticalDistance = height * 0.35;
+    final horizontalDistance = width * 0.25;
+
+    /// Animatsiyalarni endi build ichida yaratamiz
+    _opacityAnimation = TweenSequence([
+      TweenSequenceItem(tween: ConstantTween<double>(1.0), weight: 75),
+      TweenSequenceItem(tween: Tween<double>(begin: 1.0, end: 0.0), weight: 25),
+    ]).animate(_animationController);
+
+    _verticalAnimation = TweenSequence([
+      TweenSequenceItem(tween: ConstantTween<double>(0.0), weight: 50),
+      TweenSequenceItem(
+          tween: Tween<double>(begin: 0.0, end: verticalDistance), weight: 25),
+      TweenSequenceItem(tween: ConstantTween<double>(verticalDistance), weight: 25),
+    ]).animate(_animationController);
+
+    _horizontalAnimation = TweenSequence([
+      TweenSequenceItem(tween: ConstantTween<double>(0.0), weight: 75),
+      TweenSequenceItem(
+          tween: Tween<double>(begin: 0.0, end: horizontalDistance), weight: 25),
+    ]).animate(_animationController);
+
     return Scaffold(
       backgroundColor: AppColors.white,
       body: AnimatedBuilder(
         animation: _animationController,
         builder: (context, ch) {
-          final centerX = (width - 245)/2;
-          final centerY = (height-78)/2;
           return Stack(
             children: [
               Positioned(
@@ -98,16 +82,16 @@ class _SplashScreenState extends State<SplashScreen>
                 top: centerY - _verticalAnimation.value,
                 child: FadeTransition(
                   opacity: _opacityAnimation,
-                  child: Container(
-                      width: 245,
-                      height: 78,
-                      child: Center(
-                        child: AppIcons.pdp,
-                      ),
+                  child: SizedBox(
+                    width: logoWidth,
+                    height: logoHeight,
+                    child: Center(
+                      child: AppIcons.pdp,
                     ),
+                  ),
                 ),
               ),
-          ]
+            ],
           );
         },
       ),

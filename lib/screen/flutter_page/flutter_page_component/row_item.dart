@@ -24,3 +24,37 @@ class CustomRowItem extends StatelessWidget {
     );
   }
 }
+
+class ModuleSelector extends StatelessWidget {
+  final int activeIndex;
+  final Function(int) onModuleSelected;
+
+  const ModuleSelector({
+    super.key,
+    required this.activeIndex,
+    required this.onModuleSelected,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: [
+          for (int i = 1; i <= 5; i++)
+            Padding(
+              padding: const EdgeInsets.only(right: 12),
+              child: GestureDetector(
+                onTap: () => onModuleSelected(i),
+                child: CustomRowItem(
+                  isActive: activeIndex == i,
+                  text: "$i-modul",
+                ),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+}
+

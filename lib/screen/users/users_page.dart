@@ -2,8 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pdp_quiz/core/theme/icons.dart';
 import 'package:pdp_quiz/core/theme/strings.dart';
+import 'package:pdp_quiz/core/widgets/custom_bottom_nav_bar.dart';
 
 import '../../core/theme/colors.dart';
+
+void main(){
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: UsersPage(),
+    );
+  }
+}
+
+
 
 class UsersPage extends StatefulWidget {
   const UsersPage({super.key});
@@ -108,15 +126,7 @@ class _UsersPageState extends State<UsersPage> {
           )
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-          currentIndex: 0,
-          selectedItemColor: AppColors.green,
-          unselectedItemColor: AppColors.black,
-          items: [
-            BottomNavigationBarItem(icon: SvgPicture.asset("assets/icons/home.svg"), label: ''),
-            BottomNavigationBarItem(icon: SvgPicture.asset("assets/icons/grade.svg"), label: ''),
-            BottomNavigationBarItem(icon: SvgPicture.asset("assets/icons/profile.svg"), label: ''),
-          ]),
+      bottomNavigationBar: bottomNavigationBar(1, context)
     );
   }
 }
