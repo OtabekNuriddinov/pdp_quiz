@@ -1,5 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:pdp_quiz/core/theme/colors.dart';
+import 'package:pdp_quiz/core/theme/icons.dart';
+import 'package:pdp_quiz/core/widgets/custom_bottom_nav_bar.dart';
 
 class ResultPage extends StatefulWidget {
   const ResultPage({super.key});
@@ -10,39 +13,12 @@ class ResultPage extends StatefulWidget {
 
 class _ResultPageState extends State<ResultPage> {
 
-  final PageController _pageController = PageController();
-  int _selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        onTap: (index) {
-          setState(() {
-            _selectedIndex = index;
-            _pageController.animateToPage(
-              index,
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeInOut,
-            );
-          });
-        },
-        items:  [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Birinchi',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Ikkinchi',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Uchinchi',
-          ),
-        ],
-      ),
-      appBar: _buildAppBar(),
+      bottomNavigationBar: bottomNavigationBar(0, context),
+      appBar: _buildAppBar(context),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -61,7 +37,7 @@ class _ResultPageState extends State<ResultPage> {
                   ),
                 ),
                 Positioned(
-                  left: 190,
+                  left: MediaQuery.sizeOf(context).width-290,
                   top: 20,
                   child: Stack(
                     alignment: Alignment.center,
@@ -111,10 +87,10 @@ class _ResultPageState extends State<ResultPage> {
                 ),
                 Positioned(
                   top: 180,
-                  left: 45,
+                  left: 26,
                   child: Container(
                     height: 150,
-                    width: 400,
+                    width: MediaQuery.sizeOf(context).width-90,
                     decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
@@ -133,20 +109,13 @@ class _ResultPageState extends State<ResultPage> {
                         Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Container(
-                              height: 20,
-                              width: 20,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.green,
-                              ),
-                            ),
+                            Dot(color: AppColors.green),
                             SizedBox(
                               width: 10,
                             ),
                             Text(
                               "3 correct answers   ",
-                              style: TextStyle(fontSize: 20),
+                              style: TextStyle(fontSize: 16),
                             ),
                           ],
                         ),
@@ -156,20 +125,13 @@ class _ResultPageState extends State<ResultPage> {
                         Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Container(
-                              height: 20,
-                              width: 20,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.red,
-                              ),
-                            ),
+                            Dot(color: Colors.red),
                             SizedBox(
                               width: 10,
                             ),
                             Text(
                               "7 incorrect answers",
-                              style: TextStyle(fontSize: 20),
+                              style: TextStyle(fontSize: 16),
                             ),
                           ],
                         )
@@ -193,25 +155,24 @@ class _ResultPageState extends State<ResultPage> {
   }
 }
 
-AppBar _buildAppBar() {
+AppBar _buildAppBar(BuildContext context) {
   return AppBar(
     backgroundColor: Colors.white,
-    leading: IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back)),
+    leading: IconButton(onPressed: () {
+      Navigator.pop(context);
+    }, icon: const Icon(Icons.arrow_back)),
     title: const Text(
       "Lorem ipsum dolor sit amet...",
       style: TextStyle(fontFamily: "Poppins"),
     ),
     centerTitle: true,
     actions: [
-      Padding(
-        padding: const EdgeInsets.only(right: 15.0),
-        child: CircleAvatar(
-          radius: 20,
-          child: Center(
-            child: Text("flutter iconi uchun joy"),
-          ),
-        ),
+      SizedBox(
+        height: 20,
+        width: 20,
+        child: AppIcons.littleFlutter,
       ),
+      SizedBox(width: 20,)
     ],
   );
 }
@@ -250,4 +211,21 @@ Container myCustomButton({required String text}){
       ),
     ),
   );
+}
+
+class Dot extends StatelessWidget {
+  final Color color;
+  const Dot({super.key, required this.color});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 20,
+      width: 20,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: color,
+      ),
+    );
+  }
 }

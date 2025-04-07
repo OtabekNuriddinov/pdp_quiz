@@ -5,6 +5,7 @@ import 'package:pdp_quiz/core/config/routes.dart';
 import 'package:pdp_quiz/core/theme/colors.dart';
 import 'package:pdp_quiz/core/theme/icons.dart';
 import 'package:pdp_quiz/core/widgets/custom_bottom_nav_bar.dart';
+import 'package:pdp_quiz/screen/flutter_page/flutter_page.dart';
 import 'package:pdp_quiz/screen/page_eight/page_eight.dart';
 import '../../core/widgets/main_elevated_button.dart';
 import 'helpers.dart';
@@ -39,16 +40,6 @@ class _HomeState extends State<Home> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: AppColors.white,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-            size: 25,
-          ),
-        ),
         title: Text("Lorem ipsum dolor ", style: TextStyle(fontSize: 20)),
         actions: [
           SizedBox(
