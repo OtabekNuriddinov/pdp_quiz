@@ -11,12 +11,12 @@ class LessonsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        for (int i = 1; i < 10; i++)
+        for (int i = 1; i < 55; i++)
           Padding(
             padding: const EdgeInsets.only(bottom: 8),
             child: GestureDetector(
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>LevelScreen()));
+                Navigator.pushNamed(context, AppRoutes.level);
               },
               child: Container(
                 alignment: Alignment.center,

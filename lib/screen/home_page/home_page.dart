@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pdp_quiz/screen/flutter_page/flutter_page.dart';
 import '../../core/config/routes.dart';
 import '../../core/theme/colors.dart';
 import '../../core/theme/dimens.dart';
@@ -75,10 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
             return GestureDetector(
               onTap: (){
-                Navigator.pushNamed(
-                  context,
-                  AppRoutes.flutter,
-                );
+                Navigator.pushNamed(context, AppRoutes.flutter);
               },
               child: Card(
                 elevation: AppDimens.cardElevation,

@@ -1,26 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pdp_quiz/core/config/routes.dart';
+import 'package:pdp_quiz/core/theme/colors.dart';
+import 'package:pdp_quiz/screen/category_page/category_page.dart';
 import 'package:pdp_quiz/screen/home_page/home_page.dart';
 import 'package:pdp_quiz/screen/profile_screen/profile_screen.dart';
 import 'package:pdp_quiz/screen/users/users_page.dart';
 
 BottomNavigationBar bottomNavigationBar(int active, BuildContext context) {
   return BottomNavigationBar(
+    backgroundColor: AppColors.white,
     onTap: (int index) {
       switch (index) {
         case 0:
           {
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
           }
         case 1:
           {
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>UsersPage()));
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>CategoryPage()));
           }
         case 2:
           {
             debugPrint("Push");
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfileScreen()));
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>ProfileScreen()));
           }
       }
     },
