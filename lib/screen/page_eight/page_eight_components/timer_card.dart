@@ -50,7 +50,7 @@ class TimerCardState extends State<TimerCard> {
           width: 280,
           height: 192,
           decoration: BoxDecoration(
-            color: AppColors.green2,
+            color: AppColors.green,
             borderRadius: BorderRadius.circular(12),
           ),
           padding: const EdgeInsets.only(
@@ -87,7 +87,7 @@ class TimerCardState extends State<TimerCard> {
                   height: 60,
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
-                    color: AppColors.green2,
+                    color: AppColors.green,
                   ),
                 ),
               ),
