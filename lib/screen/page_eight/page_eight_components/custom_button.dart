@@ -36,7 +36,7 @@ class CustomButton extends StatelessWidget {
               TextSpan(
                   text: "$variant. ",
                   style: TextStyle(fontWeight: FontWeight.bold)),
-              TextSpan(text: "$question"),
+              TextSpan(text: question),
             ]),
           ),
         ),

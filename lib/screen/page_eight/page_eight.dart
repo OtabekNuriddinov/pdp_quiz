@@ -86,7 +86,9 @@ class _EightPageState extends State<EightPage> {
                     onPressed: () {
                       setState(() {
                         if (count < question.length - 1) {
-                          count++;
+                          setState(() {
+                            count++;
+                          });
                         } else {
                          Navigator.push(context, MaterialPageRoute(builder: (context)=>UsersPage()));
                         }
