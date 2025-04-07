@@ -1,13 +1,14 @@
+
 import 'package:flutter/material.dart';
 
-class ResultScreen extends StatefulWidget {
-  const ResultScreen({super.key});
+class ResultPage extends StatefulWidget {
+  const ResultPage({super.key});
 
   @override
-  State<ResultScreen> createState() => _ResultScreenState();
+  State<ResultPage> createState() => _ResultPageState();
 }
 
-class _ResultScreenState extends State<ResultScreen> {
+class _ResultPageState extends State<ResultPage> {
 
   final PageController _pageController = PageController();
   int _selectedIndex = 0;
